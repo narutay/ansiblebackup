@@ -28,7 +28,7 @@ class BackupPlay(Play):
         super(BackupPlay, self).__init__()
 
         dt = datetime.now()
-        dt_str = dt.strftime('backup-%Y%m%d%H%M%S')
+        dt_str = dt.strftime('backup/%Y%m%d%H%M%S')
         self.dest = "%s/%s" % (os.getcwd(), dt_str)
 
     @staticmethod

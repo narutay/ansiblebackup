@@ -5,12 +5,12 @@
   vars:
     nginx_vhosts:
       - listen: "80"
-        server_name: "example.com www.example.com"
-        return: "301 https://example.com$request_uri"
+        server_name: "www.example.com"
+        return: "301 https://www.example.com$request_uri"
         filename: "example.com.80.conf"
       - listen: "8080"
-        server_name: " www2.example.com"
-        return: "301 https://www.example.com$request_uri"
+        server_name: "www2.{{ inventory_hostname }}.com"
+        return: "301 https://www.{{ inventory_hostname }}.com$request_uri"
         filename: "example.com.8080.conf"
   roles:
     - { role: geerlingguy.nginx }
